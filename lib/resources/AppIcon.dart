@@ -9,4 +9,9 @@ class AppIcon {
   static const String onboardPNG2 = '${_path}onboardPNG2.png';
   static const String onboardPNG3 = '${_path}onboardPNG3.png';
 
+  static const String home = '${_path}Home.svg';
+  static const String explore = '${_path}Explore.svg';
+  static const String bookmark = '${_path}Bookmark.svg';
+  static const String profile = '${_path}Profile.svg';
+
 }

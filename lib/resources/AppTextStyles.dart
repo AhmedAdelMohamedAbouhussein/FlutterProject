@@ -30,4 +30,22 @@ class AppTextStyles
       fontSize: 16,
       fontFamily: fontFamily
   );
+  static const TextStyle whiteColor48BoldPoppins = TextStyle(
+      color: AppColor.whitishTitles,
+      fontWeight: FontWeight.w700,
+      fontSize: 48,
+      fontFamily: fontFamily
+  );
+  static const TextStyle blueColor48BoldPoppins = TextStyle(
+      color: AppColor.blueTitles,
+      fontWeight: FontWeight.w700,
+      fontSize: 48,
+      fontFamily: fontFamily
+  );
+  static const TextStyle greyColor20semiPoppins = TextStyle(
+      color: AppColor.greyParagraphColor,
+      fontWeight: FontWeight.w400,
+      fontSize: 20,
+      fontFamily: fontFamily
+  );
 }

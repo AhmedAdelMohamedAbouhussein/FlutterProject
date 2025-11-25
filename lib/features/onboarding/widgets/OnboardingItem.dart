@@ -4,9 +4,7 @@ import 'package:assignment1/resources/AppButtonStyle.dart';
 import 'package:assignment1/resources/AppColor.dart';
 import 'package:assignment1/resources/AppRouter.dart';
 import 'package:assignment1/resources/AppTextStyles.dart';
-import 'package:assignment1/resources/AppIcon.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class OnboardingItem extends StatefulWidget
 {
@@ -109,7 +107,7 @@ class _OnboardingItemState extends State<OnboardingItem> {
                     if (currentIndex == 2)
                     {
                       // Navigate to Login page
-                      Navigator.pushReplacementNamed(context, Routes.homeRoute);
+                      Navigator.pushReplacementNamed(context, Routes.loginIn);
                     }
                     else
                     {
