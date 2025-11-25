@@ -1,13 +1,32 @@
+import 'package:assignment1/app/App.dart';
+import 'package:assignment1/constants/uiConstants/AppUiConstants.dart';
 import 'package:assignment1/resources/AppButtonStyle.dart';
+import 'package:assignment1/resources/AppColor.dart';
+import 'package:assignment1/resources/AppRouter.dart';
 import 'package:assignment1/resources/AppTextStyles.dart';
 import 'package:assignment1/resources/AppIcon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class OnboardingItem extends StatelessWidget
+class OnboardingItem extends StatefulWidget
 {
+  final int pageIndex;
+  const OnboardingItem({super.key, required this.pageIndex});
 
-  const OnboardingItem({super.key});
+  @override
+  State<OnboardingItem> createState() => _OnboardingItemState();
+}
+
+class _OnboardingItemState extends State<OnboardingItem> {
+
+  late int currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    currentIndex = widget.pageIndex; // initialize from constructor
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +34,7 @@ class OnboardingItem extends StatelessWidget
       child: Column(
         children: [
           Image.asset(
-            AppIcon.onboardPNG1,
+            AppUiConstants.onboardingData[currentIndex].image,
             width: 428,
             height: 584,
             fit: BoxFit.cover,
@@ -40,12 +59,45 @@ class OnboardingItem extends StatelessWidget
           ),
           SizedBox(height: 60),
           Padding(
-            padding: const EdgeInsets.only(right: 24), // left padding
+            padding: const EdgeInsets.only(right: 24),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.end, // align to left
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: SizedBox(
+                      height: 20,
+                      child: Row(
+                        children: List.generate(
+                          AppUiConstants.onboardingData.length,
+                              (index) => AnimatedContainer(
+                            duration: Duration(milliseconds: 200),
+                            height: 8,
+                            width: 8,
+                            decoration: BoxDecoration(
+                              color: currentIndex == index
+                                  ? AppColor.blueTitles
+                                  : AppColor.greyParagraphColor,
+                              shape: BoxShape.circle,
+                            ),
+                            margin: EdgeInsets.only(right: 6),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (currentIndex > 0)
+                    {
+                      setState(()
+                      {
+                        currentIndex--;
+                      });
+                    }
+                  },
                   child: Text(
                     'Back',
                     style: AppTextStyles.greyColor16regPoppins,
@@ -53,10 +105,23 @@ class OnboardingItem extends StatelessWidget
                 ),
                 SizedBox(width: 16), // gap between buttons
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (currentIndex == 2)
+                    {
+                      // Navigate to Login page
+                      Navigator.pushReplacementNamed(context, Routes.homeRoute);
+                    }
+                    else
+                    {
+                      setState(()
+                      {
+                        currentIndex++;
+                      });
+                    }
+                  },
                   style: AppButtonStyle.primaryButtonStyle,
                   child: Text(
-                    'Next',
+                    AppUiConstants.onboardingData[currentIndex].buttonText,
                     style: AppTextStyles.whiteColor16semiPoppins,
                   )
                 ),
@@ -68,5 +133,4 @@ class OnboardingItem extends StatelessWidget
       ),
     );
   }
-
 }
