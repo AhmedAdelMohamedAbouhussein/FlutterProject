@@ -17,8 +17,8 @@ class AppUiConstants
 
   static List<NavItem> bottomNavItems = [
     NavItem(icon: AppIcon.home, label: 'Home', page: Container()),
-    NavItem(icon: AppIcon.explore, label: 'Category', page: Container()),
-    NavItem(icon: AppIcon.bookmark, label: 'Cart', page: Container()),
+    NavItem(icon: AppIcon.explore, label: 'Explore', page: Container()),
+    NavItem(icon: AppIcon.bookmark, label: 'Bookmark', page: Container()),
     NavItem(icon: AppIcon.profile, label: 'Profile', page: Container()),
   ];
 }
