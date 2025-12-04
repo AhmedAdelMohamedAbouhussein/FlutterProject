@@ -1,9 +1,9 @@
-import 'package:assignment1/features/auth/widgets/authHeader.dart';
-import 'package:assignment1/features/auth/widgets/loginForm.dart';
+import 'package:flutter_app/features/auth/widgets/authHeader.dart';
+import 'package:flutter_app/features/auth/widgets/loginForm.dart';
 import 'package:flutter/material.dart';
 
-import '../../commanWidgets/AppRichText.dart';
-import '../../resources/AppRouter.dart';
+import '../../../core/commanWidgets/AppRichText.dart';
+import '../../../core/resources/AppRouter.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

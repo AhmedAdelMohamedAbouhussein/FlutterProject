@@ -1,4 +1,4 @@
-import 'package:assignment1/resources/AppColor.dart';
+import 'package:flutter_app/core/resources/AppColor.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/AppTextStyles.dart';

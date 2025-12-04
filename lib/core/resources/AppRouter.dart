@@ -1,10 +1,10 @@
 // contains route names
-import 'package:assignment1/features/auth/LoginScreen.dart';
-import 'package:assignment1/features/home/HomeScreen.dart';
-import 'package:assignment1/features/onboarding/OnboardingScreen.dart';
-import 'package:assignment1/features/splashScreen.dart';
-import '../features/auth/SignupScreen.dart';
-import 'package:assignment1/resources/AppColor.dart';
+import 'package:flutter_app/features/auth/presentation/LoginScreen.dart';
+import 'package:flutter_app/features/home/HomeScreen.dart';
+import 'package:flutter_app/features/onboarding/OnboardingScreen.dart';
+import 'package:flutter_app/features/splashScreen.dart';
+import '../../features/auth/presentation/SignupScreen.dart';
+import 'package:flutter_app/core/resources/AppColor.dart';
 import 'package:flutter/material.dart';
 
 class Routes {

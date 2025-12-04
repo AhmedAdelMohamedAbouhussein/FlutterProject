@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../resources/AppTextStyles.dart';
+import '../../../core/resources/AppTextStyles.dart';
 
 class AuthHeader extends StatelessWidget {
   const AuthHeader({

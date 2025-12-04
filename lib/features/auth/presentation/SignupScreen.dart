@@ -1,8 +1,8 @@
-import 'package:assignment1/features/auth/widgets/SignupForm.dart';
+import 'package:flutter_app/features/auth/widgets/SignupForm.dart';
 import 'package:flutter/material.dart';
-import 'package:assignment1/features/auth/widgets/authHeader.dart';
-import '../../commanWidgets/AppRichText.dart';
-import '../../resources/AppRouter.dart';
+import 'package:flutter_app/features/auth/widgets/authHeader.dart';
+import '../../../core/commanWidgets/AppRichText.dart';
+import '../../../core/resources/AppRouter.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});

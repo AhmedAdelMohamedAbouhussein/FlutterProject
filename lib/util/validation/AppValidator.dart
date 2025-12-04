@@ -20,7 +20,7 @@ class AppValidator {
       return "Password must be at least 8 characters long";
     }
     final RegExp passwordRegex = RegExp(
-      r'^(?=.*[A-Za-z])(?=.*\d).{6,}$',
+      r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$',
     );
     if (!passwordRegex.hasMatch(password)) {
       return "Password must contain uppercase, lowercase, digit and special character";

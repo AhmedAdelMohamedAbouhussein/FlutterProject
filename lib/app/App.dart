@@ -1,5 +1,5 @@
-import 'package:assignment1/resources/AppColor.dart';
-import 'package:assignment1/resources/AppRouter.dart';
+import 'package:flutter_app/core/resources/AppColor.dart';
+import 'package:flutter_app/core/resources/AppRouter.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {

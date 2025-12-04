@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../commanWidgets/AppTextField.dart';
-import '../../../resources/AppButtonStyle.dart';
-import '../../../resources/AppRouter.dart';
-import '../../../resources/AppTextStyles.dart';
+import '../../../core/commanWidgets/AppTextField.dart';
+import '../../../core/resources/AppButtonStyle.dart';
+import '../../../core/resources/AppRouter.dart';
+import '../../../core/resources/AppTextStyles.dart';
 import '../../../util/validation/AppValidator.dart';
 
 class SignupForm extends StatefulWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../constants/uiConstants/AppUiConstants.dart';
-import '../../resources/AppColor.dart';
-import '../../resources/AppTextStyles.dart';
+import '../../core/constants/uiConstants/AppUiConstants.dart';
+import '../../core/resources/AppColor.dart';
+import '../../core/resources/AppTextStyles.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

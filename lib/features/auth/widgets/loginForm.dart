@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../commanWidgets/AppTextField.dart';
-import '../../../resources/AppButtonStyle.dart';
-import '../../../resources/AppRouter.dart';
-import '../../../resources/AppTextStyles.dart';
+import '../../../core/commanWidgets/AppTextField.dart';
+import '../../../core/network/DioConfig.dart';
+import '../../../core/resources/AppButtonStyle.dart';
+import '../../../core/resources/AppRouter.dart';
+import '../../../core/resources/AppTextStyles.dart';
+import '../../../core/storage/SharedPrefsHelper.dart';
 import '../../../util/validation/AppValidator.dart';
+import '../service/AuthService.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -58,11 +62,15 @@ class _LoginFormState extends State<LoginForm> {
             style: AppButtonStyle.primaryButtonStyle.copyWith(
               minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)), // full width, 50 height
             ),
-            onPressed: () {
+            onPressed: () async {
               if (_formKey.currentState!.validate()) {
                 debugPrint(
                   'Email ${_emailController.text}, Password ${_passwordController.text}',
                 );
+                AuthService( DioConfig.getDio(), ).login(_emailController.text, _passwordController.text);
+
+                SharedPreferences sh = await SharedPreferences.getInstance();
+                SharedPrefsHelper(sh).setLoggedIn(true);
                 Navigator.pushReplacementNamed(context, Routes.homeRoute);
               }
             },

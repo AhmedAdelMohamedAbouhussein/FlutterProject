@@ -1,10 +1,12 @@
-import 'package:assignment1/app/App.dart';
-import 'package:assignment1/constants/uiConstants/AppUiConstants.dart';
-import 'package:assignment1/resources/AppButtonStyle.dart';
-import 'package:assignment1/resources/AppColor.dart';
-import 'package:assignment1/resources/AppRouter.dart';
-import 'package:assignment1/resources/AppTextStyles.dart';
+import 'package:flutter_app/app/App.dart';
+import 'package:flutter_app/core/constants/uiConstants/AppUiConstants.dart';
+import 'package:flutter_app/core/resources/AppButtonStyle.dart';
+import 'package:flutter_app/core/resources/AppColor.dart';
+import 'package:flutter_app/core/resources/AppRouter.dart';
+import 'package:flutter_app/core/resources/AppTextStyles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/storage/SharedPrefsHelper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardingItem extends StatefulWidget
 {
@@ -103,9 +105,11 @@ class _OnboardingItemState extends State<OnboardingItem> {
                 ),
                 SizedBox(width: 16), // gap between buttons
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (currentIndex == 2)
                     {
+                      SharedPreferences sh = await SharedPreferences.getInstance();
+                      SharedPrefsHelper(sh).setOnboardingCompleted(true);
                       // Navigate to Login page
                       Navigator.pushReplacementNamed(context, Routes.loginIn);
                     }
